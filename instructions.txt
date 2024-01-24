@@ -1,0 +1,36 @@
+1. npm init
+npx tsc -init
+
+2. // tsconfig.json
+"target": "ES2020",
+"module": "NodeNext" ,
+"rootDir": "./src" ,
+"outDir": "./dist",
+"esModuleInterop": ,
+"forceConsistentCasingInFileNames": true ,
+"strict": true,
+"skipLibCheck": true,
+
+/*
+"allowImportingTsExtensions": true,
+"noEmit": true
+
+better not to use
+*/
+
+3. // initialise
+npm i @types/express @types/node --save-dev
+npm i typescript nodemon --save-dev
+
+npm i concurrently --save-dev
+
+4. //package.json
+"build": "tsc",
+"start": "node dist/app.js",
+"watch": "tsc -w",
+"dev": "nodemon ./dist/app.js"
+or
+"dev": "concurrently \"tsc -w"\ \"nodemon ./dist/app.js"\
+
+
+
